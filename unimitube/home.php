@@ -29,30 +29,9 @@
               <ul class="navbar-nav" style="margin-left: auto">
                   <li class="nav-item">
                       <div class="dropdown">
-                          <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-first" data-toggle="modal" data-target="#exampleModalScrollable">
+                          <a class="nav-link" href="channels.php">
                               My Channels
-                          </button>
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                  <div class="modal-content">
-                                      <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                          </button>
-                                      </div>
-                                      <div class="modal-body">
-                                          ...
-                                      </div>
-                                      <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary">Save changes</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                          </a>
                       </div>
                   </li>
                   <li class="nav-item">
@@ -68,6 +47,11 @@
               </ul>
           </div>
       </nav>
+      <div class="jumbotron p-2">
+          <h1 class="text-center">Homepage</h1>
+          <hr>
+          <p class="text-center">Contents</p>
+      </div>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

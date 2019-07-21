@@ -40,38 +40,17 @@
             <ul class="navbar-nav" style="margin-left: auto">
                 <li class="nav-item">
                     <div class="dropdown">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-first" data-toggle="modal" data-target="#exampleModalScrollable">
-                            My Channels
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="dropdown">
+                            <a class="nav-link" href="channels.php">
+                                My Channels
+                            </a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.php" tabindex="-1" aria-disabled="true"> 
-                         <?php while($row = $resnickname->fetch_assoc()) {
-                          print_r($row["nickname"]);
-                           }?>    
-                       </a>
+                    <a class="nav-link" href="profile.php" tabindex="-1" aria-disabled="true">
+                        <?php while($row = $resnickname->fetch_assoc()) {print_r($row["nickname"]);}?>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php" tabindex="-1" aria-disabled="true">Log out</a>
@@ -82,12 +61,13 @@
     <div class="jumbotron p-2">
         <h1 class="text-center">Profile</h1>
         <hr>
-        <p class="text-center">Here you can find info about your friends, channels and more</p>
+        <p class="text-center">About you and your friends...</p>
     </div>
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-md-3">
-                <img src="..." class="" style="height: 150px; width: 150px">
+                <img src="<?php while($row = $resfoto->fetch_assoc()) {print_r($row["foto"]);}?>" class="" style="height: 150px; width: 150px"
+                >
             </div>
         </div>
         <div class="row">
@@ -97,29 +77,27 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" name="mail" class="form-control" 
-                                placeholder=
-                          		<?php while($row = $resemail->fetch_assoc()) {
-                          print_r($row["email"]);
-                           }?> >
+                                <input
+                                 type="text" name="mail" class="form-control"
+                                 value="<?php while($row = $resemail->fetch_assoc()) {print_r($row["email"]);}?>"
+                                 >
                             </div>
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="nickname" class="form-control" 
-                                placeholder=
-                                <?php while($row = $resnickname->fetch_assoc()) {
-                          print_r($row["nickname"]);
-                           }?> >
+                                <label>Nickname</label>
+                                <input
+                                 type="text" name="nickname" class="form-control"
+                                 value="<?php while($row = $resnickname->fetch_assoc()) {print_r($row["nickname"]);}?>"
+                                >
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" 
-                                placeholder="*********">
+                                value="">
                             </div>
                             <div class="form-group">
                                 <label>City</label>
                                 <input type="text" name="citta_n" class="form-control" 
-                                placeholder=
+                                value=
                                 <?php while($row = $rescitta_n->fetch_assoc()) {
                           print_r($row["citta_n"]);
                            }?>   >
@@ -129,10 +107,9 @@
                             <div class="form-group">
                                 <label>Date of birth</label>
                                 <input type="date" name="data_n" class="form-control" 
-                                placeholder=
-                                <?php while($row = $resdata_n->fetch_assoc()) {
-                          print_r($row["data_n"]);
-                           }?>   >
+                                value="<?php while($row = $resdata_n->fetch_assoc()) {
+                                    print_r($row["data_n"]);
+                                }?>">
                             </div>
                             <div class="form-group">
                                 <label>Genre</label>
